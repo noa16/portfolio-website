@@ -1,0 +1,10 @@
+.btnSubmit {
+  color: var(--clr-white);
+  background: var(--clr-primary-5);
+  border-color: var(--clr-white);
+  text-transform: uppercase;
+}
+.form {
+  flex: 0 0 calc(50% - 3rem);
+ 
+}

@@ -1,0 +1,25 @@
+.navbar {
+  display: inline-block;
+  background-color: rgb(230, 231, 231);
+  min-width: 250px;
+  height: 700px;
+  position: sticky;
+  margin-right: 60rem;
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
+  position: fixed;
+}
+.imgNoa {
+  height: 15%;
+  border-radius: 200%;
+  margin-top: 5px;
+}
+i:hover {
+  color: blue;
+}
+a {
+  transition: var(--transition);
+}
+a:hover {
+  transform: scaleX(1.1);
+}
