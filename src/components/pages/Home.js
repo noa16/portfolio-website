@@ -3,8 +3,10 @@ import About from "./About";
 import classes from "./Home.module.css";
 import Navbar from "../layout/Navbar";
 import Experience from "./Experience";
-import Timeline from "./Timeline";
 import Contact from "../pages/Contact";
+import Portfolio from './Portfolio'
+import data from '../data'
+
 
 const Home = (props) => {
   const handleClick = () => {};
@@ -50,7 +52,15 @@ const Home = (props) => {
 
       <About />
       <Experience />
-      <Timeline />
+        <h1  style={{ marginLeft:"15rem",textAlign:"center"}}>Portfolio</h1>
+            <p style={{  marginLeft:"15rem",textAlign:"center", color:"gray"}}>Click on the image to see the project description.</p>
+      <div className={classes.containerGallery} style={{marginTop:'3rem'}}>
+      {data.map((info,idx)=>{
+        return(
+          <Portfolio technology={info.technology} img={info.img} images={info.images} link={info.url} text={info.text}  />
+        )
+      })}
+      </div>
       <Contact />
     </Fragment>
   );

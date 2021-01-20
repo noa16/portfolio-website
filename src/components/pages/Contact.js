@@ -1,21 +1,48 @@
 import React, { useState, Fragment } from "react";
 import classes from "./Contact.module.css";
 import axios from '../../axios/axios'
+import DialogBox from '../layout/DialogBox'
+import Validation from '../Validation'
+import phoneImg from '../../image/phone.png'
+import mail from '../../image/mail.png'
+
+
 const Contact = () => {
+ 
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState("");
-  const handleSubmit = (e) => {
+  const [isSuccess,setSuccess] = useState(false)
+  const [isError,setError] = useState(false)
+ 
+ 
+  const handleSubmit = async (e) => {
+ 
+   
     e.preventDefault();
+    
+    
     console.log(message);
-    axios.post("http://localhost:3000/api/contact/postMessage",{
+    try{
+    await axios.post("http://localhost:3000/api/contact/postMessage",{
       phone,
       message
     })
+   
+     setSuccess(current=>current=true)
+     console.log(isSuccess)
+    
+    
+
+  }
+  catch(e){
+    console.log(e)
+    setError(current=>current=true)
+
+  }
   };
   return (
-    <Fragment>
-    <h1 style={{fontFamily: "Armata, sansSerif",
-              fontFamily: "Nunito, sans-serif"}}>Send A Message</h1>
+    <Fragment className={classes.container}>
+    <h1 style={{marginLeft:"17rem",marginTop:"10rem",textAlign:"center"}}>Send A Message</h1>
       <div
         style={{
           display: "flex",
@@ -24,21 +51,33 @@ const Contact = () => {
           marginLeft: "30rem",
         }}
       >
-        <div style={{marginTop:'10rem'}}>
+        <div style={{marginTop:'10rem',marginRight:"5rem"}}>
           
-          <h3
+          <p
+            className={classes.titleContact}
             style={{
-              fontFamily: "Armata, sansSerif",
-              fontFamily: "Nunito, sans-serif",
-              padding:"27px",
-              marginRight:"35px",
+              fontSize:"1rem",
+              padding:"10px",
+              marginRight:"5rem",
               width:"25rem",
-               letterSpacing: "var(--spacing)",
-              
+               color:"gray"
             }}
           >
             I am available on almost every social media. You can message me, I will reply within 24 hours.
-          </h3>
+          </p>
+          <div style={{display:"flex"}}  style={{marginTop:'4rem',display:"flex"}}>
+             <img src={phoneImg}/><p style={{color:"gray" ,marginTop:"15px",marginLeft:"20px" }}>0547424004</p>
+             
+             
+
+
+             
+          
+          </div>
+          <div style={{display:"flex"}}>
+            <img style={{marginTop:"1rem"}} src={mail}/><p style={{color:"gray",marginTop:"35px",marginLeft:"5px"}}>noa199216@gmail.com</p>
+          </div>
+         
         </div>
         <form className={classes.form} onSubmit={(e) => handleSubmit(e)}>
           <div
@@ -61,6 +100,7 @@ const Contact = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
+           <Validation msg={message} phone={phone} />
             <button
               className={classes.btnSubmit}
               style={{
@@ -71,14 +111,19 @@ const Contact = () => {
                 fontFamily: "Nunito, sans-serif",
                 letterSpacing: "var(--spacing)",
                 cursor: "pointer",
+               
                 
               }}
               type="submit"
             >
               Submit
             </button>
+           
           </div>
+          {isSuccess===true?<div><DialogBox msg={"The message successfully sent"} type={"Success"}/></div>:null}
+          {isError===true?<div><DialogBox msg={"Error occure"} type={"Error"}/></div>:null}
         </form>
+        
       </div>
     </Fragment>
   );

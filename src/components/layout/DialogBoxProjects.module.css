@@ -1,0 +1,30 @@
+.myModal {
+}
+.btnClose {
+  padding: 10px;
+  color: rgb(110, 163, 224);
+  border: darkgray;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.btnClose:hover {
+  background-color: rgb(110, 163, 224);
+  color: white;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.item1 {
+  flex: 0 0 calc(50% - 2rem);
+}
+@keyframes example {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 237px;
+  }
+}

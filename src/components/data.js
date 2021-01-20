@@ -1,65 +1,39 @@
+import imgTicketCover from '../Images/ticketWebsite.PNG'
+import imagesStudyTogether from '../Images/collageStudyTogether.jpg'
+import studyTogetherCover from '../Images/StudyTogether.PNG'
+import ticketCollage from '../Images/ticketCollage.jpg'
 const data = [
-   {
-        text: 'Started working on the app-ideas repository',
-        date: 'February 25 2019',
-        category: {
-			tag: 'app-ideas',
-			color: '#FFDB14'
-		},
-        link: {
-            url: 'https://github.com/florinpop17/app-ideas',
-            text: 'Check it out on GitHub'
-        }
-    },
+  
     {
-        text: 'Started the Weekly Coding Challenge program',
-        date: 'March 04 2019',
+        text: 'I built a site that helps students find learning groups by having students who study together advertise on the site where they study, where and when And students who feel alone can come and chat with them if they have trouble with homeworkI used side by side with node js using socket.io to realize the chat And next to the client I used react, js and i used mongodb as a database',
+        date: 'June 2019',
+        technology:['Node.js','Java Script','MongoDB','Redux','React Router','css','ReduxThunk'],
+         img:studyTogetherCover,
+         images:imagesStudyTogether,
         category: {
 			tag: 'blog',
 			color: '#e17b77'
 		},
-        link: {
-            url: 'https://florin-pop/blog/2019/03/weekly-coding-challenge/',
-            text: 'Check it out here'
-        }
+      
+            url: 'https://github.com/noa16/studyTogether'
+            
+        
     },
     {
-        text: 'Got 1.000 followers on Twitter',
+        text: 'Website for purchase/sale ticket',
         date: 'March 07 2019',
+        technology:['Postgresql ','Java Script','Node.js','Axios','Context API','React Hooks','React.js','React Router','css'],
+         img:imgTicketCover,
+         images:ticketCollage,
         category: {
 			tag: 'twitter',
 			color: '#1DA1F2'
 		},
-        link: {
-            url: 'https://twitter.com/florinpop1705',
-            text: 'See profile'
-        }
+    
+        url: 'https://github.com/noa16/sale-purchase-ticket',
+            
+        
     },
-    {
-        text:
-            'I published my first article in the FreeCodeCamp Medium Publication',
-        date: 'March 18 2019',
-        category: {
-			tag: 'medium',
-			color: '#018f69'
-		},
-        link: {
-            url:
-                'https://medium.freecodecamp.org/how-to-build-a-double-slider-sign-in-and-sign-up-form-6a5d03612a34',
-            text: 'Check it out here'
-        }
-    },
-    {
-        text: 'Over 12.000 views in a single day on my Medium posts',
-        date: 'April 05 2019',
-        category: {
-			tag: 'medium',
-			color: '#018f69'
-		},
-        link: {
-            url: 'https://medium.com/@popflorin1705',
-            text: 'See profile'
-        }
-    }
+  
 ]
 export default data

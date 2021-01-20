@@ -23,3 +23,11 @@ a {
 a:hover {
   transform: scaleX(1.1);
 }
+@media screen and (max-width: 1200px) {
+  .navbar {
+    max-width: 200px;
+  }
+  .title {
+    margin-left: 75px;
+  }
+}

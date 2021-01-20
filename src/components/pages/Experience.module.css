@@ -24,3 +24,8 @@
   box-shadow: var(--dark-shadow);
   transform: scale(1.02);
 }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

@@ -1,26 +1,34 @@
-import React, { useState } from 'react'
-import {Dialog,DialogActionsBar} from 'react-dialog'
+
+import React, { useState } from "react";
+import classes from './DialogBox.module.css'
 
 
-const DialogBox = ()=>{
-        const [visible,setVisible] = useState(false)
-        const toggleDialog=()=> {
-        setVisible(true);
-    }
-    return(
-        <div>
-            
-             <Dialog title={"Please confirm"}>
-                    <p style={{ margin: "25px", textAlign: "center" }}>Are you sure you want to continue?</p>
-                    <DialogActionsBar>
-                        <button className="k-button">No</button>
-                        <button className="k-button">Yes</button>
-                    </DialogActionsBar>
-                </Dialog>
+import Modal from "react-modal";
 
-        </div>
-    )
 
+const DialogBox = (props)=>{
+    console.log(props.msg)
+  
+       const [isOpen, setIsOpen] = useState(true);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
+
+  return (
+    <div className="App">
+     
+
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel="My dialog"
+       
+      >
+        <p style={{fontFamily: "Armata, sans-serif"}}>{props.msg}</p>
+        <button className={classes.btn} onClick={toggleModal}>Close </button>
+      </Modal>
+    </div>)
 }
 
-export default DialogBox
+export default React.memo(DialogBox)

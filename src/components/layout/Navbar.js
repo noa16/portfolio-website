@@ -9,7 +9,7 @@ const Navbar = (props) => {
     <div className={classes.container} id="introduction">
       <nav className={classes.navbar}>
         <img src={NOAH} className={classes.imgNoa} />
-        <h1>Noa Aslanov</h1>
+        <h1 className={classes.title}>Noa Aslanov</h1>
         <i style={{ marginRight: "4px" }} class="far fa-envelope"></i>
 
         <h7
@@ -38,7 +38,7 @@ const Navbar = (props) => {
           About
         </a>
         <a
-          href="#TimeLine"
+          href="#Portfolio"
           style={{
             display: "block",
             marginTop: "10px",
@@ -46,14 +46,15 @@ const Navbar = (props) => {
             color: "GrayText",
           }}
         >
-          TimeLine
+          Portfolio
         </a>
-        <i className="fab fa-linkedin" style={{ marginTop: "10px" }}></i>
-        <i
+        
+        <a style={{color:"black"}} href="https://www.linkedin.com/in/noa-aslanov/"><i className="fab fa-linkedin" style={{ marginTop: "10px" }}></i></a>
+        <a style={{color:"black"}} href="https://www.facebook.com/noa.aslanov/"><i
           className="fab fa-facebook-f"
           style={{ display: "block", marginTop: "10px" }}
-        ></i>
-        <i className="fab fa-github" style={{ marginTop: "10px" }}></i>
+        ></i></a>
+        <a style={{color:"black"}} href="https://github.com/noa16"><i className="fab fa-github" style={{ marginTop: "10px" }}></i></a>
         <div style={{ marginLeft: "2rem" }}>
           <Login props={props} />
         </div>

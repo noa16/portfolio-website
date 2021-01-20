@@ -6,7 +6,7 @@ const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin,setLogin] = useState("")
-   const history = useHistory();
+  const history = useHistory();
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
@@ -62,6 +62,7 @@ const Login = (props) => {
               fontFamily: "Nunito, sans-serif",
               letterSpacing: "var(--spacing)",
               cursor: "pointer",
+               outline: "0"
             }}
             type="submit"
           >

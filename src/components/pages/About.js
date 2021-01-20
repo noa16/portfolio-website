@@ -2,25 +2,15 @@ import React from "react";
 
 const About = () => {
   return (
-    <div id="about" style={{ padding: "10px", marginLeft: "15rem" }}>
-      <span
-        style={{
-          letterSpacing: "0.25rem",
-          fontSize: "1rem",
-          fontFamily: "Armata, sansSerif",
-          fontFamily: "Nunito, sans-serif",
-          marginLeft: "5rem",
-          color: "gray",
-        }}
-      >
-        About Me
-      </span>
+    <div id="about" style={{ padding: "10px", marginLeft: "15rem", }}>
+     <h1 style={{ marginLeft: "5rem",textAlign:"center"}}>About <span style={{color: '#339beb'}}>Me</span></h1>
       <p
         style={{
           marginTop: "2rem",
-          fontFamily: "Armata, sans-serif",
-          fontFamily: "Nunito, sans-serif",
-          fontFamily: "Sansita, sans-serif",
+         
+          fontSize: "1rem",
+        
+        
           color: "gray",
           marginLeft: "5rem",
         }}
@@ -35,9 +25,9 @@ const About = () => {
       <p
         style={{
           marginTop: "2rem",
-          fontFamily: "Armata, sans-serif",
-          fontFamily: "Nunito, sans-serif",
-          fontFamily: "Sansita, sans-serif",
+           
+          fontSize: "1rem",
+       
           color: "gray",
           marginLeft: "5rem",
         }}
