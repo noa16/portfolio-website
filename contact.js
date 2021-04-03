@@ -9,7 +9,7 @@ const middleware = require("../middleware/auth")
 
 const Message = require("../models/message");
 
-router.get('/myMessage',async(req,res)=>{
+router.get('/myMessage',middleware,async(req,res)=>{
     let Messages
     console.log("jj")
     try{
@@ -22,7 +22,7 @@ router.get('/myMessage',async(req,res)=>{
     }
 })
 
-router.post('/postMessage',async(req,res)=>{
+router.post('/postMessage',middleware,async(req,res)=>{
 
      console.log("gggg")
      const { phone, message } =  await req.body;
@@ -50,7 +50,7 @@ router.post('/postMessage',async(req,res)=>{
       res.status(500).send("server error");
     }
 })
-router.delete('/:phone',async(req,res)=>{//need to add middleware do problem with token
+router.delete('/:phone',middleware,async(req,res)=>{
     
 
     try{
